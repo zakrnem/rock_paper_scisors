@@ -31,48 +31,52 @@ This exception must be fist in the "switch" code.
 There other rule if the user choice & the computer choice are equal it's a tie.
 */
 
+let userChoiceString;
+let computerChoiceString;
+let consoleAnswer;
+
+switch(userChoiceNumber) {
+  case(1):
+    userChoiceString = 'Rock';
+    break;
+  case(2):
+    userChoiceString = 'Paper';
+    break;
+  case(3):
+    userChoiceString = 'Scissors';
+    break;
+}
+
+switch(computerChoiceNumber) {
+  case(1):
+    computerChoiceString = 'Rock';
+    break;
+  case(2):
+    computerChoiceString = 'Paper';
+    break;
+  case(3):
+    computerChoiceString = 'Scissors';
+    break;
+}
+
   switch(true) {
     case (userChoiceNumber === 1 && computerChoiceNumber === 3):
-      console.log('You win');
+      consoleAnswer = 'You win, ' + userChoiceString + ' beats ' + computerChoiceString;
+      console.log(consoleAnswer);
       break;
     case (userChoiceNumber === 3  && computerChoiceNumber === 1):
-      console.log('You lost');
+      consoleAnswer = 'You lost, ' + computerChoiceString + ' beats ' + userChoiceString;
+      console.log(consoleAnswer);
       break;
     case(userChoiceNumber > computerChoiceNumber):
-      console.log('You win!');
+      consoleAnswer = 'You win, ' + userChoiceString + ' beats ' + computerChoiceString;
+      console.log(consoleAnswer);
       break;
     case(userChoiceNumber < computerChoiceNumber):
-      console.log('You lost');
+      consoleAnswer = 'You lost, ' + computerChoiceString + ' beats ' + userChoiceString;
+      console.log(consoleAnswer);
       break;
     case(userChoiceNumber === computerChoiceNumber):
       console.log("It's a tie");
       break;
   }
-
-/* It would be nice to know the choice of the computer & the user */
-
-  switch(userChoiceNumber) {
-    case(1):
-      console.log('User: Rock');
-      break;
-    case(2):
-      console.log('User: Paper');
-      break;
-    case(3):
-      console.log('User: Scissor');
-      break;
-}
-
-  switch(computerChoiceNumber) {
-    case(1):
-      console.log('Computer: Rock');
-      break;
-    case(2):
-      console.log('Computer: Paper');
-      break;
-    case(3):
-      console.log('Computer: Scissor');
-      break;
-  }
-
-
