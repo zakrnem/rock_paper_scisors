@@ -5,9 +5,8 @@ it's necessary to add by one to prevent getting number lower than 1
 it's also necessary to round the random number
 */
 
-  /*const computerChoiceNumber = Math.round((Math.random() * 2) + 1);*/
-  const computerChoiceNumber = 3;
-  
+  const computerChoiceNumber = Math.round((Math.random() * 2) + 1);
+ 
 /*
 now we must create a input for the user
 this input require prompting a message indicating that:
@@ -42,6 +41,20 @@ Rule #4: if both player throw the same object no one wins
       break;
     case(userChoiceNumber === computerChoiceNumber):
       console.log("It's a tie");
+      break;
+  }
+
+/* It would be nice to know the choice of the computer */
+
+  switch(computerChoiceNumber) {
+    case(1):
+      console.log('Computer: Rock');
+      break;
+    case(2):
+      console.log('Computer: Paper');
+      break;
+    case(3):
+      console.log('Computer: Scisor');
       break;
   }
 
