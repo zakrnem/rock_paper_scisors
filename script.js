@@ -4,17 +4,17 @@ one way to accomplish this would to create a random number (that's between 0 and
 it's necessary to add by one to prevent getting number lower than 1
 it's also necessary to round the random number
 */
+let gameScore = 0;
 
+  for (let i = 0; i < 5; i++) {
           
-  const computerChoiceNumber = Math.round((Math.random() * 2) + 1);
+  const computerChoiceNumber = Math.round((Math.random() * 2.5) + 0.5);
   let userChoiceNumber = parseInt(prompt('ROCK PAPER & SCISSORS GAME\n Please enter a option:\n 1 for rock, 2 for paper and 3 for scisors'));
   
   
-  let gameScore = 0;
+  
   gameScore = (playRound(userChoiceNumber, computerChoiceNumber)) + gameScore;
   
-  console.log(gameScore);
-
     function playRound(userChoiceNumber, computerChoiceNumber) {
       let roundScore = 0;
 
@@ -73,6 +73,9 @@ switch(computerChoiceNumber) {
 }
 
   switch(true) {
+    case(userChoiceNumber > 3 || userChoiceNumber < 1):
+      console.log('Please enter a number between 1 and 3');
+      break;
     case (userChoiceNumber === 1 && computerChoiceNumber === 3):
       consoleAnswer = 'You win, ' + userChoiceString + ' beats ' + computerChoiceString;
       roundScore = ++roundScore;
@@ -96,7 +99,7 @@ switch(computerChoiceNumber) {
     case(userChoiceNumber === computerChoiceNumber):
       console.log("It's a tie");
       break;
-  }
+    }
 
   return roundScore;
 }
@@ -105,4 +108,6 @@ switch(computerChoiceNumber) {
 We need a function that checks who was the winner a adds a number to variable that will be the gamescore.
 */
 
+  }
 
+  console.log('Your score is: ' + gameScore);
