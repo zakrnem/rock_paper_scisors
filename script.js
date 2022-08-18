@@ -4,18 +4,22 @@ one way to accomplish this would to create a random number (that's between 0 and
 it's necessary to add by one to prevent getting number lower than 1
 it's also necessary to round the random number
 */
-  function game(gameScore, gameRound) {
 
-   gameRound = i;   
-
-  for (let i = 0; i < 5; i++) {
-            
+          
+  const computerChoiceNumber = Math.round((Math.random() * 2) + 1);
+  let userChoiceNumber = parseInt(prompt('ROCK PAPER & SCISSORS GAME\n Please enter a option:\n 1 for rock, 2 for paper and 3 for scisors'));
+  
+  
+  let gameScore = 0;
+  gameScore = (playRound(userChoiceNumber, computerChoiceNumber)) + gameScore;
+  
+  console.log(gameScore);
 
     function playRound(userChoiceNumber, computerChoiceNumber) {
+      let roundScore = 0;
 
-  /*  
-  const computerChoiceNumber = Math.round((Math.random() * 2) + 1);/
- */
+      
+  
 /*
 now we must create a input for the user
 this input require prompting a message indicating that:
@@ -24,7 +28,7 @@ this input require prompting a message indicating that:
 3 = scissor
 */
 /*
-  let userChoiceNumber = parseInt(prompt('ROCK PAPER & SCISSORS GAME\n Please enter a option:\n 1 for rock, 2 for paper and 3 for scisors'));
+  
   */
 /*
 next we must create an algorithm for the rules of the game
@@ -71,18 +75,22 @@ switch(computerChoiceNumber) {
   switch(true) {
     case (userChoiceNumber === 1 && computerChoiceNumber === 3):
       consoleAnswer = 'You win, ' + userChoiceString + ' beats ' + computerChoiceString;
+      roundScore = ++roundScore;
       console.log(consoleAnswer);
       break;
     case (userChoiceNumber === 3  && computerChoiceNumber === 1):
       consoleAnswer = 'You lost, ' + computerChoiceString + ' beats ' + userChoiceString;
+      roundScore = --roundScore;
       console.log(consoleAnswer);
       break;
     case(userChoiceNumber > computerChoiceNumber):
       consoleAnswer = 'You win, ' + userChoiceString + ' beats ' + computerChoiceString;
       console.log(consoleAnswer);
+      roundScore = ++roundScore;
       break;
     case(userChoiceNumber < computerChoiceNumber):
       consoleAnswer = 'You lost, ' + computerChoiceString + ' beats ' + userChoiceString;
+      roundScore = --roundScore;
       console.log(consoleAnswer);
       break;
     case(userChoiceNumber === computerChoiceNumber):
@@ -90,13 +98,11 @@ switch(computerChoiceNumber) {
       break;
   }
 
+  return roundScore;
 }
 
-const userChoiceNumber = 1;
-const computerChoiceNumber = 3;
-console.log(playRound(userChoiceNumber, computerChoiceNumber));
+/*
+We need a function that checks who was the winner a adds a number to variable that will be the gamescore.
+*/
 
-  }
 
-  return gameScore;
-}
